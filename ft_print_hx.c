@@ -12,14 +12,19 @@
 
 #include "ft_printf.h"
 
-int	ft_print_hx(unsigned int nb)
+int	ft_print_hx(unsigned int nb, char flag)
 {
 	char	c;
 	int		size;
 
 	size = 0;
+	if (flag == 'X' && nb)
+	{
+		size += write(1, "0X", 2);
+		flag = 0;
+	}
 	if ((nb / 16) > 0)
-		size += ft_print_hx(nb / 16);
+		size += ft_print_hx((nb / 16), flag);
 	if ((nb % 16) > 9)
 	{
 		c = (nb % 16) + '7';

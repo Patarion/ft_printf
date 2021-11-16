@@ -6,7 +6,7 @@
 #    By: jgagnon <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 09:43:27 by jgagnon           #+#    #+#              #
-#    Updated: 2021/11/07 17:02:12 by jgagnon          ###   ########.fr        #
+#    Updated: 2021/11/14 12:55:59 by jgagnon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,11 @@ all: $(NAME)
 $(NAME) : 	$(OBJS_FILES)
 		ar rcs $(NAME) $(OBJS_FILES)
 		@echo "_____printf.a créé avec succès_____"
+
+bonus: $(NAME)
+	ar rcs $(NAME) $(OBJS_FILES)
+	@echo "_____Les bonus ont été créés_____"
+
 clean:
 	rm -rf $(OBJS_FILES)
 	@echo "_____Les objets des fonctions ont été détruites_____"

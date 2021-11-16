@@ -18,12 +18,18 @@
 # include <stdio.h>
 # include <stdarg.h>
 
+typedef struct search
+{
+	int		j;
+	char	f;
+}	find;
+
 int	ft_print_adress(void *str);
 int	ft_print_char(char *str);
-int	ft_print_decimal(int nb);
-int	ft_print_hex(unsigned long nb);
-int	ft_print_hx(unsigned int nb);
-int	ft_print_integer(int nb);
+int	ft_print_decimal(int nb, char flag);
+int	ft_print_hex(unsigned long nb, char flag);
+int	ft_print_hx(unsigned int nb, char flag);
+int	ft_print_integer(int nb, char flag);
 int	ft_print_percent(void);
 int	ft_print_str(char *str);
 int	ft_print_unsigned(unsigned int nb);

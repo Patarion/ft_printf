@@ -23,6 +23,6 @@ int		ft_print_adress(void *str)
 		return (3);
 	}
 	size += write(1, "0x", 2);
-	size += ft_print_hex((unsigned long) str);
+	size += ft_print_hex((unsigned long) str, 0);
 	return (size);
 }

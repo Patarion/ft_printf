@@ -6,7 +6,7 @@
 /*   By: jgagnon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 09:52:59 by jgagnon           #+#    #+#             */
-/*   Updated: 2021/11/09 11:35:36 by jgagnon          ###   ########.fr       */
+/*   Updated: 2021/11/17 10:23:23 by jgagnon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 # include <stdio.h>
 # include <stdarg.h>
 
-typedef struct search
+typedef struct s_search
 {
 	int		j;
 	char	f;
-}	find;
+}	t_find;
 
 int	ft_print_adress(void *str);
 int	ft_print_char(char *str);

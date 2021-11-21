@@ -6,7 +6,7 @@
 /*   By: jgagnon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 18:27:43 by jgagnon           #+#    #+#             */
-/*   Updated: 2021/11/17 10:24:04 by jgagnon          ###   ########.fr       */
+/*   Updated: 2021/11/21 11:55:48 by jgagnon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_print_arg_mandatory(const char *format, va_list argp, t_find flag)
 	else if (*format == 'c')
 		word += ft_print_char(va_arg(argp, char *));
 	else if (*format == 'd')
-		word += ft_print_decimal(va_arg(argp, long), flag.f);
+		word += ft_print_decimal(va_arg(argp, int), flag.f);
 	else if (*format == 'x')
 		word += ft_print_hex(va_arg(argp, unsigned int), flag.f);
 	else if (*format == 'X')

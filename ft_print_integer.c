@@ -18,7 +18,7 @@ int	ft_print_integer(int nb, char flag)
 	int		size;
 
 	if (nb == -2147483648)
-		return (write(1,"-2147483648", 11));
+		return (write(1, "-2147483648", 11));
 	size = 0;
 	if (nb >= 0 && flag == '+')
 			size += write(1, "+", 1);

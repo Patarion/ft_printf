@@ -40,30 +40,41 @@ int	ft_print_arg_mandatory(const char *format, va_list argp, t_find flag)
 	return (word);
 }
 
+int	ft_set(const char *format, char *set)
+{
+	int	i;
+
+	i = 0;
+	while (*format != set[i] && set[i] != '\0')
+		i++;
+	if (set[i] == '\0')
+		return (0);
+	else
+		return (i);
+}
+
 t_find	ft_find_flag(const char *format, t_find flag)
 {
 	flag.j = 0;
 	flag.f = 0;
-	format++;
-	while (*(format + 1) == 32)
-	{
+	if (ft_set(format + 1, "pcdxXi%su") == 0)
 		flag.j++;
-		format++;
-	}
-	if (*(format + 1) == 'i' || *(format + 1) == 'd' || *(format + 1) == 's')
+	while (*(format + flag.j) == 32)
+		flag.j++;
+	if (*(format + flag.j) == 'i' || *(format + flag.j) == 'd'
+		|| *(format + flag.j) == 's')
 		flag.f = 32;
-	if (*format == '#' && (*(format + 1) == 'x'))
+	if (*(format + flag.j) == '#' && (*(format + flag.j + 1) == 'x'))
 		flag.f = 'x';
-	else if (*format == '#' && (*(format + 1) == 'X'))
+	else if (*(format + flag.j) == '#' && (*(format + flag.j + 1) == 'X'))
 		flag.f = 'X';
-	else if (*format == '+' && (*(format + 1) == 'd' || *(format + 1) == 'i'))
-		flag.f = '+';
-	if (*(format + 1) == '+' && (*(format + 2) == 'd' || *(format + 2) == 'i'))
-	{
-		flag.f = '+';
+	while (*(format + flag.j + 1) == '+')
 		flag.j++;
-	}
-	flag.j++;
+	if (*(format + flag.j) == '+' && (*(format + flag.j + 1) == 'i'
+			|| *(format + flag.j + 1) == 'd'))
+		flag.f = '+';
+	if (flag.f != 0 && flag.f != 32)
+		flag.j++;
 	return (flag);
 }
 
@@ -83,7 +94,7 @@ int	ft_printf(const char *format, ...)
 			flag.j = 0;
 			flag = ft_find_flag(format, flag);
 			if (flag.f != 0)
-				format = format + flag.j;
+				format = format + flag.j - 1;
 			size += ft_print_arg_mandatory((format++), argp, flag);
 		}
 		else

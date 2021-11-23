@@ -6,7 +6,7 @@
 /*   By: jgagnon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:49:55 by jgagnon           #+#    #+#             */
-/*   Updated: 2021/11/21 11:55:21 by jgagnon          ###   ########.fr       */
+/*   Updated: 2021/11/23 08:52:48 by jgagnon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_print_decimal(int nb, char flag)
 	int		size;
 
 	if (nb == -2147483648)
-		return (write(1,"-2147483648", 11));
+		return (write(1, "-2147483648", 11));
 	size = 0;
 	if (nb >= 0 && flag == 32)
 		size += write(1, " ", 1);

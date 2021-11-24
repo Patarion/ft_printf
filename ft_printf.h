@@ -26,7 +26,6 @@ typedef struct s_search
 
 int	ft_print_adress(void *str);
 int	ft_print_char(char *str);
-int	ft_print_decimal(int nb, char flag);
 int	ft_print_hex(unsigned long nb, char flag);
 int	ft_print_hx(unsigned int nb, char flag);
 int	ft_print_nbr(int nb, char flag);

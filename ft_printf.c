@@ -21,14 +21,12 @@ int	ft_print_arg_mandatory(const char *format, va_list argp, t_find flag)
 		word += ft_print_adress(va_arg(argp, void *));
 	else if (*format == 'c')
 		word += ft_print_char(va_arg(argp, char *));
-	else if (*format == 'd')
-		word += ft_print_decimal(va_arg(argp, int), flag.f);
 	else if (*format == 'x')
 		word += ft_print_hex(va_arg(argp, unsigned int), flag.f);
 	else if (*format == 'X')
 		word += ft_print_hx(va_arg(argp, unsigned int), flag.f);
-	else if (*format == 'i')
-		word += ft_print_integer(va_arg(argp, int), flag.f);
+	else if (*format == 'i' || *format == 'd')
+		word += ft_print_nbr(va_arg(argp, int), flag.f);
 	else if (*format == '%')
 		word += ft_print_percent();
 	else if (*format == 's')

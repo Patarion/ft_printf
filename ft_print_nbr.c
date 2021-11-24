@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_decimal.c                                 :+:      :+:    :+:   */
+/*   ft_print_integer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgagnon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 16:49:55 by jgagnon           #+#    #+#             */
-/*   Updated: 2021/11/23 08:52:48 by jgagnon          ###   ########.fr       */
+/*   Created: 2021/10/29 10:44:37 by jgagnon           #+#    #+#             */
+/*   Updated: 2021/11/08 12:25:19 by jgagnon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_decimal(int nb, char flag)
+int	ft_print_nbr(int nb, char flag)
 {
 	char	c;
 	int		size;
@@ -20,10 +20,10 @@ int	ft_print_decimal(int nb, char flag)
 	if (nb == -2147483648)
 		return (write(1, "-2147483648", 11));
 	size = 0;
-	if (nb >= 0 && flag == 32)
-		size += write(1, " ", 1);
 	if (nb >= 0 && flag == '+')
 			size += write(1, "+", 1);
+	if (nb >= 0 && flag == 0x20)
+		size += write(1, " ", 1);
 	else if (nb < 0)
 	{
 		size += write(1, "-", 1);
@@ -31,7 +31,7 @@ int	ft_print_decimal(int nb, char flag)
 	}
 	flag = 0;
 	if ((nb / 10) > 0)
-		size += ft_print_decimal((nb / 10), flag);
+		size += ft_print_nbr((nb / 10), flag);
 	c = (nb % 10) + '0';
 	size += write(1, &c, 1);
 	return (size);

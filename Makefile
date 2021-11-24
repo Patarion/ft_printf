@@ -16,10 +16,9 @@ FLAGS = -Wall -Wextra -Werror
 
 SRCS_FILES = 	ft_print_adress.c\
 				ft_print_char.c\
-				ft_print_decimal.c\
 				ft_print_hex.c\
 				ft_print_hx.c\
-				ft_print_integer.c\
+				ft_print_nbr.c\
 				ft_print_percent.c\
 				ft_print_str.c\
 				ft_print_unsigned.c\

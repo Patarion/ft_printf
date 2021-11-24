@@ -29,7 +29,7 @@ int	ft_print_char(char *str);
 int	ft_print_decimal(int nb, char flag);
 int	ft_print_hex(unsigned long nb, char flag);
 int	ft_print_hx(unsigned int nb, char flag);
-int	ft_print_integer(int nb, char flag);
+int	ft_print_nbr(int nb, char flag);
 int	ft_print_percent(void);
 int	ft_print_str(char *str);
 int	ft_print_unsigned(unsigned int nb);
